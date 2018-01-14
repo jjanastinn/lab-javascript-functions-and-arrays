@@ -1,4 +1,5 @@
 // Find the maximum
+
 function maxOfTwoNumbers (item1, item2) {
   if (item1>item2) {
      return item1;
@@ -7,7 +8,11 @@ function maxOfTwoNumbers (item1, item2) {
      return item2;
    }
  }
+
+
+
  // Finding Longest Word
+
  var words = [
    'mystery',
    'brother',
@@ -17,22 +22,29 @@ function maxOfTwoNumbers (item1, item2) {
    'orchard',
    'crackpot'
  ];
- function findLongestWord (arrayOfWords){
-   if (arrayOfWords.length === 0) {
-     return;
-   }
-   else {
-     var longest = "";
-     for (var i=0; i < arrayOfWords.length; i++) {
-       if (arrayOfWords[i].length > longest.length) {
-         var longest = arrayOfWords[i];
-       }
-     }
-     return longest;
-   }
- }
+
+ function findLongestWord(arrayOfWords) {
+  if (arrayOfWords.length === 0) {
+    return;
+  }
+  else {
+    var longest = "";
+    for (var i=0; i < arrayOfWords.length; i++) {
+      if (arrayOfWords[i].length > longest.length) {
+        longest = arrayOfWords[i];
+      }
+    }
+    return longest;
+  }
+}
+
+findLongestWord(words);
+
+
  // Calculating a Sum
+
  var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+
  function sumArray(nums) {
    if (nums.length === 0) {
      return 0;
@@ -43,21 +55,35 @@ function maxOfTwoNumbers (item1, item2) {
    }
    return total;
  }
+
+// or ...
+
+function sumArray(nums) {
+  var total = nums.reduce(function(a,b) {
+    return a + b;
+  }, 0)
+  return total;
+}
+
+sumArray(numbers);
+
+
  // Calculate the Average
  var numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
  function averageNumbers(arr) {
-   if (arr.length === 0) {
-     return undefined;
-   }
-   var total = 0;
-   for (i=0; i < arr.length; i++) {
-     total = total + arr[i];
-     console.log(total);
-   }
-   var average = total / arr.length;
-   return average;
- }
+  var total = arr.reduce(function (a,b) {
+    return a + b;
+  }, 0)
+  var average = total / arr.length;
+  return average;
+}
+
+averageNumbers(numbersAvg);
+
+
  // Array of Strings
+
  var wordsArr = [
    'seat',
    'correspond',
@@ -70,17 +96,23 @@ function maxOfTwoNumbers (item1, item2) {
    'fuel',
    'palace'
  ];
+
  function averageWordLength(arrayOfWords) {
    if (arrayOfWords.length === 0) {
      return undefined;
    }
-   var total = 0;
-   for (i=0; i < arrayOfWords.length; i++) {
-     total = total + arrayOfWords[i].length;
-   }
-   var average = total / arrayOfWords.length; 
-   return average;
- }
+   function averageWordLength(arr) {
+    var sumWordLength = 0;
+    for (i=0; i < arr.length; i++) {
+      sumWordLength += arr[i].length;
+      return sumWordLength;
+    }
+    return sumWordLength;
+  }
+  
+  averageWordLength(wordsArr);
+
+
  // Unique Arrays
  var wordsUnique = [
    'crab',
@@ -108,6 +140,7 @@ function maxOfTwoNumbers (item1, item2) {
    return newArray;
  }
  // Finding Elements
+
  var wordsFind = [
    'machine',
    'subset',
@@ -118,19 +151,16 @@ function maxOfTwoNumbers (item1, item2) {
    'truth',
    'disobedience'
  ];
+
  function doesWordExist(arrayOfWords,item) {
-   if (arrayOfWords.length === 0) {
-     return false;
-   }
-     if (arrayOfWords.includes(item)) {
-       return true;
-     }
-     else {
-       return false;
-     }
-     // alternative statement: return arrayOfWords.includes(item);
- }
+  return arrayOfWords.includes(item);
+}
+
+doesWordExist(wordsFind, 'trouble');
+
+
  // Counting Repetion
+
  var wordsCount = [
    'machine',
    'matter',
@@ -144,6 +174,7 @@ function maxOfTwoNumbers (item1, item2) {
    'disobedience',
    'matter'
  ];
+
  function howManyTimes(arrayOfWords,item) {
    if (arrayOfWords.length === 0) {
      return false;
@@ -156,3 +187,4 @@ function maxOfTwoNumbers (item1, item2) {
    }
    return nTimes.length;
  }
+ 
